@@ -27,13 +27,11 @@
 					</thead>
 					<tbody>
                     <?php
-							include('koneksi.php'); //memanggil file koneksi
+							include('koneksi.php');
 							$datas = mysqli_query($koneksi, 'SELECT * FROM kuliah');
-							//script untuk menampilkan data
 
-							$no = 1;//untuk pengurutan nomor
+							$no = 1;
 
-							//melakukan perulangan
 							while($row = mysqli_fetch_assoc($datas)) {
 						?>	
 

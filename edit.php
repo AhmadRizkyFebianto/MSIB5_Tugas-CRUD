@@ -17,9 +17,8 @@
 				<?php
 				include('koneksi.php');
 
-				$id = $_GET['id']; //mengambil id barang yang ingin diubah
+				$id = $_GET['id']; 
 
-				//menampilkan barang berdasarkan id
 				$data = mysqli_query($koneksi, "select * from kuliah where id = '$id'");
 				$row = mysqli_fetch_assoc($data);
 
@@ -27,7 +26,6 @@
 				<form action="" method="post" role="form">
 					<div class="form-group mb-2">
 						<label>Kode MataKuliah</label>
-						<!--  menampilkan nama barang -->
 						<input type="text" name="Kode_Mk" required="" class="form-control" value="<?= $row['Kode_Mk']; ?>">
 
 						<!-- ini digunakan untuk menampung id yang ingin diubah -->
@@ -59,7 +57,7 @@
 					$sks = $_POST['Sks'];
 					$semester = $_POST['Semester'];
 
-					//query mengubah barang
+
 					mysqli_query($koneksi, "update kuliah set Kode_Mk='$kode_mk', Nama_Mk='$nama_mk', Sks='$sks', Semester='$semester' where id ='$id'");
 
 					//redirect ke halaman index.php

@@ -1,6 +1,6 @@
 <?php				
-			include 'koneksi.php'; //menghubungkan ke file koneksi untuk ke database
-			$id = $_GET['id']; //menampung id
+			include 'koneksi.php';
+			$id = $_GET['id'];
 
 			//query hapus
 			$datas = mysqli_query($koneksi, "delete from kuliah where id ='$id'");

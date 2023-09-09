@@ -39,17 +39,14 @@
 				<?php
 				include('koneksi.php');
 				
-				//melakukan pengecekan jika button submit diklik maka akan menjalankan perintah simpan dibawah ini
+
 				if (isset($_POST['submit'])) {
-					//menampung data dari inputan
 					$kode_mk = $_POST['Kode_Mk'];
 					$nama_mk = $_POST['Nama_Mk'];
 					$sks = $_POST['Sks'];
 					$semester = $_POST['Semester'];
 
-					//query untuk menambahkan barang ke database, pastikan urutan nya sama dengan di database
 					$datas = mysqli_query($koneksi, "INSERT INTO kuliah (Kode_Mk,Nama_Mk,Sks,Semester) VALUES ('$kode_mk', '$nama_mk', '$sks', '$semester')");
-					//id barang tidak dimasukkan, karena sudah menggunakan AUTO_INCREMENT, id akan otomatis
 
 					//ini untuk menampilkan alert berhasil dan redirect ke halaman index
 					echo "<script>alert('data berhasil disimpan.');window.location='index.php';</script>";
